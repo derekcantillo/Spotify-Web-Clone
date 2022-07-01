@@ -1,19 +1,35 @@
 
 .sidebar{
-    background-color: black;
+    background-color:black;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 10px;
-    width: 250px;
+    width: 220px;
     overflow-y: auto;
 
-    ul{
-        list-style: none;
-    }
-    li{
-        display: flex;
-        align-items: center;
-    }
+}
+
+.img-logo{
+    margin-top: 10%;
+    height: auto;
+    width: 60%;
+}
+.menu-items {
+    list-style-type: none;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-left: 0px;
+    line-height: 26px;
+    font-size: 14px;
+
+}
+.li-item{
+    margin-top: 20px;
+}
+
+.icon-item{
+    margin-right: 20px;
+    height: 25px;
 }
