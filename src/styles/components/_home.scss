@@ -1,5 +1,16 @@
-.main-content{
+.home-content{
     display: flex;
+    flex-direction: column;
     background-image: linear-gradient(to bottom, $top-grad -50%, $black 25%);
     height: 100%;
+    padding-left: 30px;
+    padding-top: 12px;
 } 
+
+.recommended-content{
+    margin-top: 40px;
+    display: flex;
+    place-items: center;
+    flex-direction: row;
+
+}
