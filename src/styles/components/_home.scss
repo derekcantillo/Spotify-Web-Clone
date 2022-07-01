@@ -1,5 +1,5 @@
 .main-content{
     display: flex;
-    flex-direction: column;
+    background-image: linear-gradient(to bottom, $top-grad -50%, $black 25%);
     height: 100%;
-}
+} 

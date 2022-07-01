@@ -7,7 +7,7 @@ import { SearchScreen } from '../pages/SearchScreen';
 
 export const AppRouter = () => {
   return (
-    <div className='__general main-content'>
+    <div className='main-content'>
         <SideBar/>
         <main>
         <Routes>
