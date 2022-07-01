@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CardItem } from '../components/ui/CardItem'
 import { NavBar } from '../components/ui/NavBar'
+import { useChannelDetails } from '../hooks/useChannelDetails'
 import { useChannels } from '../hooks/useChannels'
 
 
 
 export const HomeScreen = () => {
-
+  const navigate = useNavigate()
   const {channelsRecommended, isLoading}=useChannels()
 
-
+  const handleNavigate =(channelId : number)=>{
+    navigate(`/channel/${channelId}`)
+  }
 
   return (
     <div className='_home home-content'> 
@@ -20,8 +24,10 @@ export const HomeScreen = () => {
               {
                   !isLoading &&
                   channelsRecommended.map((chann) =>(
+                    <div key={chann.id} onClick={()=>handleNavigate(chann.id)}>
 
-                    <CardItem channel={chann}/>
+                      <CardItem channel={chann}/>
+                    </div>
                   ))
               }
  

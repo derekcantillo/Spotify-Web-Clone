@@ -7,7 +7,6 @@ interface Props{
   channel: Channel;
 }
 export const CardItem = ({channel} : Props) => {
-  console.log(channel.urls);
   
   return (
     

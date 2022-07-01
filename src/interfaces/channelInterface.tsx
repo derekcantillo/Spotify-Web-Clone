@@ -41,3 +41,4 @@ export interface Urls {
 export interface Image {
     original: null | string;
 }
+
