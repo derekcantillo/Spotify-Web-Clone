@@ -1,0 +1,19 @@
+
+.sidebar{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    overflow-y: auto;
+
+    ul{
+        list-style: none;
+    }
+    li{
+        display: flex;
+        align-items: center;
+    }
+}
