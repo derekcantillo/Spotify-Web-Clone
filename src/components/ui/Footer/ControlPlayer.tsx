@@ -1,6 +1,8 @@
 import React, { RefObject, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCirclePlay, faForwardStep, faBackwardStep, faCirclePause} from '@fortawesome/free-solid-svg-icons'
+import {faCirclePlay, faForwardStep, 
+        faBackwardStep, faCirclePause, 
+        faRotateForward, faRotateBackward} from '@fortawesome/free-solid-svg-icons'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store/store';
 import { setPlayState } from '../../../actions/player';
@@ -28,7 +30,10 @@ export const ControlPlayer = ({audioRef} : ControlProps) => {
   return (
     <div>
         <button className='_buttons btn-play'>
-            <FontAwesomeIcon icon={faBackwardStep} color='white' size='2x'/>
+            <FontAwesomeIcon icon={faRotateBackward} color='gray' size='2x'/>
+        </button>
+        <button className='_buttons btn-play'>
+            <FontAwesomeIcon icon={faBackwardStep} color='gray' size='2x'/>
         </button>
         {
             isPlaying ? 
@@ -37,13 +42,16 @@ export const ControlPlayer = ({audioRef} : ControlProps) => {
             </button>
             :
             <button className='_buttons btn-play' onClick={()=>handlePLay()}>
-                <FontAwesomeIcon icon={faCirclePlay} color='white' size='2x'/>
+                <FontAwesomeIcon icon={faCirclePlay} color='white' size='3x'/>
             </button>
 
         }
         
         <button className='_buttons btn-play'>
-            <FontAwesomeIcon icon={faForwardStep} color='white' size='2x'/>
+            <FontAwesomeIcon icon={faForwardStep} color='gray' size='2x'/>
+        </button>
+        <button className='_buttons btn-play'>
+            <FontAwesomeIcon icon={faRotateForward} color='gray' size='2x'/>
         </button>
     
     </div>

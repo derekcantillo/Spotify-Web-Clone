@@ -1,14 +1,14 @@
 .card-container{
-  background-color: rgba(12, 12, 12, 0.636);
+  background-color: #181818;;
   display: flex;
   flex-direction: column;
-  width: 13rem;
+  width: 10rem;
   border-radius: 0.3rem;
   padding: 1rem;
   position: relative;
   transition: all 0.4s;
   cursor: pointer;
-  margin-right: 50px;
+  margin-bottom: 15px;
 }
 .img{
     width: 100%;
@@ -66,16 +66,23 @@
     
     margin-top: 1rem;
     line-height: 1;
+    object-fit: cover;
 }
 .card-text h2{
     font-size: 1.2rem;
     color: white;
+    object-fit: cover;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
 
 .card-text p{
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
     color: gray;
 }
 
@@ -114,4 +121,45 @@
     margin-top: 0.5rem;
     font-weight: 500;
     color: gray;
+}
+
+.episode-pod-container{
+    position: relative;
+}
+
+.card-pod-content{
+    position: relative;
+    height: 80px;
+    background-color: hsla(0,0%,100%,.1);
+    border-radius: 4px;
+    -webkit-transition: background-color .3s ease;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+}
+
+.card-pod-img{
+    width: 80px;
+    height: 80px;
+}
+.card-pod-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 0px 0px 4px;
+}
+.card-pod-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px;
+    color: #fff;
+}
+.card-pod-tile h2{
+    font-size: 0.5rem;
+    color: white;
+    object-fit: cover;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+
 }
