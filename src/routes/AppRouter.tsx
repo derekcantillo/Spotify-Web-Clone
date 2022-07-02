@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { Footer } from '../components/ui/Footer/Footer';
 import { SideBar } from '../components/ui/SideBar';
 import { ChannelScreen } from '../pages/ChannelScreen';
 import { HomeScreen } from '../pages/HomeScreen'
@@ -20,6 +21,7 @@ export const AppRouter = () => {
         </Routes>
 
         </main>
+        <Footer/>
     </div>
   )
 }

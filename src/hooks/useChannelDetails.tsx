@@ -4,11 +4,11 @@ import channelDB from "../services/http-commons";
 
 
 export const useChannelDetails = (channelId: number) => {
-    const [state, setState] = useState<Details>();
+    const [detail, setDetatil] = useState<Details>();
     const [isLoading, setisLoading] = useState(true)
     const getChannelById = async ()=>{
         const response = await channelDB.get<ChannelFull>(`channels/${channelId}`)
-        setState(response.data.body)
+        setDetatil(response.data.body)
         setisLoading(false)
     }
     useEffect(() => {
@@ -17,7 +17,7 @@ export const useChannelDetails = (channelId: number) => {
 
 
     return {
-        state,
+        detail,
         isLoading
     }
 

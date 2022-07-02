@@ -20,6 +20,7 @@
 
 .play-icon{
     position: absolute;
+    cursor: pointer;
     top: 45%;
     right: 12%;
     transform: translateY(10px);
@@ -72,6 +73,43 @@
 }
 
 .card-text p{
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: gray;
+}
+
+.card-ep-container{
+    background-color: rgba(12, 12, 12, 0.636);
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    position: relative;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin-right: 50px;
+}
+.card-ep-container img{
+    max-width: 150px;
+    height: 150px;
+    display: block;
+    object-fit: cover;
+    padding: 5px;
+    border-radius: 2px;
+}
+.card-ep-text{
+    
+    margin-top: 1rem;
+    line-height: 1;
+}
+.card-ep-text h2{
+    font-size: 1.2rem;
+    color: white;
+}
+
+.card-ep-text p{
     font-size: 0.9rem;
     margin-top: 0.5rem;
     font-weight: 500;

@@ -4,13 +4,15 @@ import { CardItem } from '../components/ui/CardItem'
 import { NavBar } from '../components/ui/NavBar'
 import { useChannelDetails } from '../hooks/useChannelDetails'
 import { useChannels } from '../hooks/useChannels'
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 
 
 export const HomeScreen = () => {
   const navigate = useNavigate()
-  const {channelsRecommended, isLoading}=useChannels()
-
+  const {channelsRecommended}=useChannels()
+  const {loading}=useSelector((state : RootState) => state.ui)
   const handleNavigate =(channelId : number)=>{
     navigate(`/channel/${channelId}`)
   }
@@ -22,7 +24,8 @@ export const HomeScreen = () => {
         <div className='_home recommended-content'>
       
               {
-                  !isLoading &&
+                !loading &&
+                  
                   channelsRecommended.map((chann) =>(
                     <div key={chann.id} onClick={()=>handleNavigate(chann.id)}>
 

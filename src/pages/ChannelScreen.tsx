@@ -1,44 +1,62 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { CardAudioItem } from '../components/ui/CardAudioItem';
 import { useChannelDetails } from '../hooks/useChannelDetails'
+import { useAudioClips } from '../hooks/useAudioClips';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
+import { Audio } from '../components/ui/Audio';
 type idParams={
     channelId: string;
 }
 export const ChannelScreen = () => {
     const params = useParams<idParams>()
-
+    const {loading}=useSelector((state : RootState) => state.ui)
+  
     const {channelId} = params;
     const parsed = parseInt(channelId as string)
+  
+    const{detail, isLoading}=useChannelDetails(parsed)
+    const{audios}=useAudioClips(parsed)
 
-    const{state, isLoading}=useChannelDetails(parsed)
-    console.log(state);
-   
     
-  return (
-    
-    <div className='_channel channel-content'>
+
+    if (!isLoading) {
+
+      const {channel} = detail;
+      const {category, title, description, urls}=channel
+      const {logo_image} = urls
+      return (
         
-
-            <img src={`${state?.channel.urls.banner_image.original}`}/>
-
-            <div>
-                
-                    <div className='_buttons play-icon'>
-                        <div className='_buttons circle'>
-                        <div className='_buttons triangle'>
-
-                        </div> 
-
-                        </div>
-
-                    </div>
-
-            
-
+        
+        <div className='_channel channel-content'>
+          <div className='_channel logo-container'>
+            <Audio/>
+            <img className='_channel img' src={logo_image.original}/>
+    
+          </div>
+                {/* <img  src={`${detail?.channel.urls.banner_image.original}`}/> */}
+            <div className='_channel header-title'>
+              <h1>{title}</h1>
             </div>
-       
-
-     
-    </div>
-  )
+            <div className='_channel header-subtitle'>
+              <h3>{category.title}</h3>
+            </div>
+            <div className='_channel header-description'>
+                <p>{description}</p>
+            </div>
+            {
+              !isLoading &&
+  
+              audios?.audio_clips.map((audi)=>(
+  
+                <CardAudioItem audio={audi} />
+              ))
+            }
+    
+         
+        </div>
+      )
+    }
+  
 }
