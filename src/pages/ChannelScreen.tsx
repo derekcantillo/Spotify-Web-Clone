@@ -5,7 +5,7 @@ import { useChannelDetails } from '../hooks/useChannelDetails'
 import { useAudioClips } from '../hooks/useAudioClips';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
-import { Audio } from '../components/ui/Audio';
+
 type idParams={
     channelId: string;
 }
@@ -31,7 +31,7 @@ export const ChannelScreen = () => {
         
         <div className='_channel channel-content'>
           <div className='_channel logo-container'>
-            <Audio/>
+
             <img className='_channel img' src={logo_image.original}/>
     
           </div>

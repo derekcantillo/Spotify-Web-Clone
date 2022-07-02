@@ -1,19 +1,51 @@
-import React from 'react'
+import React, { RefObject, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCirclePlay, faForwardStep, faBackwardStep} from '@fortawesome/free-solid-svg-icons'
+import {faCirclePlay, faForwardStep, faBackwardStep, faCirclePause} from '@fortawesome/free-solid-svg-icons'
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../../store/store';
+import { setPlayState } from '../../../actions/player';
+import { useRef } from 'react';
 
-export const ControlPlayer = () => {
+type ControlProps={
+    audioRef: RefObject<HTMLAudioElement>
+}
+export const ControlPlayer = ({audioRef} : ControlProps) => {
+    const {isPlaying, audioActive }= useSelector((state: RootState) => state?.play)
+    const dispatch = useDispatch()
+
+    const handlePause=()=>{
+        if (audioRef !== null && audioRef.current){
+            audioRef.current.pause();
+            dispatch(setPlayState(false))
+        }
+    }
+    const handlePLay=()=>{
+        if (audioRef !== null && audioRef.current){
+            audioRef.current.play();
+            dispatch(setPlayState(true));
+        }
+    }
   return (
     <div>
         <button className='_buttons btn-play'>
             <FontAwesomeIcon icon={faBackwardStep} color='white' size='2x'/>
         </button>
-        <button className='_buttons btn-play'>
-            <FontAwesomeIcon icon={faCirclePlay} color='white' size='2x'/>
-        </button>
+        {
+            isPlaying ? 
+            <button className='_buttons btn-play' onClick={()=>handlePause()}>
+                <FontAwesomeIcon icon={faCirclePause} color='white' size='2x'/>
+            </button>
+            :
+            <button className='_buttons btn-play' onClick={()=>handlePLay()}>
+                <FontAwesomeIcon icon={faCirclePlay} color='white' size='2x'/>
+            </button>
+
+        }
+        
         <button className='_buttons btn-play'>
             <FontAwesomeIcon icon={faForwardStep} color='white' size='2x'/>
         </button>
+    
     </div>
   )
 }
