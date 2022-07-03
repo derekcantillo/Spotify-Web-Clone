@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 import { CardItem } from '../components/ui/CardItem'
 import { NavBar } from '../components/ui/NavBar'
-import { useChannelDetails } from '../hooks/useChannelDetails'
+
 import { useChannels } from '../hooks/useChannels'
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
@@ -11,6 +11,7 @@ import { CardHorizontalItem } from '../components/CardHorizontalItem';
 
 
 export const HomeScreen = () => {
+  
   const navigate = useNavigate()
   const {channelsRecommended}=useChannels()
   const {loading}=useSelector((state : RootState) => state.ui)
@@ -24,12 +25,13 @@ export const HomeScreen = () => {
         <div className='_home home-sections'>
           <section>
             <div className='_home section-title'>
-              <h1>Top de podcast</h1>
+              <h1>Recommended channels</h1>
             </div>
             <div className='_home horizontal-cards'>
               {
                 !loading &&
-                channelsRecommended.slice(0,4).map((chann)=>(
+                channelsRecommended.slice(0,8).map((chann)=>(
+                 
                   <div key={chann.id} onClick={()=>handleNavigate(chann.id)}>
                           <CardHorizontalItem channel={chann}/>
                   </div>
@@ -41,7 +43,7 @@ export const HomeScreen = () => {
 
           <section>
             <div className='_home section-title'>
-              <h1>Top de podcast</h1>
+              <h1>More Recommended Channels</h1>
             </div>
 
             <div className='_home recommended-content'>

@@ -3,7 +3,7 @@
     flex-direction: column;
     background-image: linear-gradient(to bottom, $top-grad -50%, $black 25%);
     height: 100%;
-    padding-left: 30px;
+    padding-left: 20px;
     padding-top: 12px;
     overflow-y: scroll;
 } 
@@ -21,8 +21,8 @@
         gap: 0px 0px;
         grid-auto-flow: row;
         grid-template-areas:
-          ". . . . . . "
-          ". . . . . . ";
+          ". . . . . ."
+          ". . . . . .";
       
 
 }
@@ -34,6 +34,7 @@
 
 .section-title{
     margin-bottom: 22px;
+
 }
 
 .section-title h1{
@@ -44,11 +45,13 @@
     text-transform: none;
     color: white;
 }
+
 .horizontal-cards{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(270px,1fr));
     row-gap: 16px;
     column-gap: 24px;
     max-height: 176px;
     overflow-y: hidden;
+    margin-bottom: 30px;
 }

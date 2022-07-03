@@ -9,7 +9,7 @@ export const CardHorizontalItem = ({channel} : Props) => {
 
 
   return (
-    <div className='_cards card-pod-container'>
+    <div className='_cards card-pod-container animate__animated animate__fadeIn'>
         <div className='_cards card-pod-content'>
             <div className='_cards card-pod-img'>
                 <img src={`${channel?.urls.logo_image.original}`}/>

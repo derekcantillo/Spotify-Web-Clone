@@ -10,7 +10,7 @@ export const CardItem = ({channel} : Props) => {
   
   return (
     
-    <div className='_cards card-container'>
+    <div className='_cards card-container animate__animated animate__fadeIn'>
     
         <div className='_cards img-holder'>
 

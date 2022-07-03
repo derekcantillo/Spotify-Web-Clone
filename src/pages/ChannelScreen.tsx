@@ -30,21 +30,28 @@ export const ChannelScreen = () => {
         
         
         <div className='_channel channel-content'>
-          <div className='_channel logo-container'>
 
-            <img className='_channel img' src={logo_image.original}/>
-    
-          </div>
-                {/* <img  src={`${detail?.channel.urls.banner_image.original}`}/> */}
-            <div className='_channel header-title'>
+          <div className='_channel channel-header'>
+            <div className='_channel channel-img-header'>
+              <img src={logo_image.original}/>
+
+            </div>
+            <div className='_channel channel-text-header'>
+              <h3>Podcast</h3>
               <h1>{title}</h1>
+              <div className='_channel channel-name-channel'>
+                <figure>
+                  <img src={logo_image.original}/>
+                </figure>
+                <p>{title}</p>
+              </div>
             </div>
-            <div className='_channel header-subtitle'>
-              <h3>{category.title}</h3>
-            </div>
-            <div className='_channel header-description'>
-                <p>{description}</p>
-            </div>
+
+          </div>
+          <div className='_channel channel-body'>
+           
+            <div className='_channel channel-eps'>
+              <h2>All Episodes</h2>
             {
               !isLoading &&
   
@@ -53,7 +60,13 @@ export const ChannelScreen = () => {
                 <CardAudioItem audio={audi} />
               ))
             }
+            </div>
+            <div className='_channel channel-description'>
+                <h2>Description</h2>
+                <p>{description}</p>
+            </div>
     
+          </div>
          
         </div>
       )

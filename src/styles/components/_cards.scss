@@ -86,55 +86,22 @@
     color: gray;
 }
 
-.card-ep-container{
-    background-color: rgba(12, 12, 12, 0.636);
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    border-radius: 0.3rem;
-    padding: 1rem;
+.card-pod-container{
     position: relative;
-    transition: all 0.4s;
-    cursor: pointer;
-    margin-right: 50px;
-}
-.card-ep-container img{
-    max-width: 150px;
-    height: 150px;
-    display: block;
-    object-fit: cover;
-    padding: 5px;
-    border-radius: 2px;
-}
-.card-ep-text{
     
-    margin-top: 1rem;
-    line-height: 1;
-}
-.card-ep-text h2{
-    font-size: 1.2rem;
-    color: white;
-}
-
-.card-ep-text p{
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    font-weight: 500;
-    color: gray;
-}
-
-.episode-pod-container{
-    position: relative;
 }
 
 .card-pod-content{
     position: relative;
+    cursor: pointer;
     height: 80px;
     background-color: hsla(0,0%,100%,.1);
     border-radius: 4px;
-    -webkit-transition: background-color .3s ease;
     display: grid;
     grid-template-columns: 80px 1fr;
+}
+.card-pod-container:hover{
+    background-color: #222;
 }
 
 .card-pod-img{
@@ -153,8 +120,8 @@
     padding: 0px 16px;
     color: #fff;
 }
-.card-pod-tile h2{
-    font-size: 0.5rem;
+.card-pod-title h2{
+    font-size: 1rem;
     color: white;
     object-fit: cover;
     display: -webkit-box;
@@ -162,4 +129,94 @@
     -webkit-box-orient: vertical;  
     overflow: hidden;
 
+}
+
+
+.card-ep-container{
+    position: relative;
+    
+}
+
+.card-ep-content{
+    position: relative;
+    cursor: pointer;
+    padding: 15px ;
+    height: 120px;
+    background-color: transparent;
+    border-radius: 4px;
+    display: grid;
+    border-top: 1px solid rgba(128, 128, 128, 0.347);
+    grid-template-columns: 120px 1fr;
+}
+.card-ep-container:hover{
+    background-color: #222;
+}
+
+.card-ep-img{
+   justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.card-ep-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.card-ep-details{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+
+}
+
+.card-ep-title{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 16px;
+    color: #fff;
+}
+.card-ep-title h2{
+    font-size: 1rem;
+    color: white;
+    object-fit: cover;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+
+}
+.card-ep-description{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 16px;
+}
+.card-ep-description p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    color: gray;
+}
+.card-ep-control{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+.card-ep-play{
+    display: flex;
+    margin-top: 5px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 16px;
+}
+.card-ep-time p{
+    margin-top: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
 }
