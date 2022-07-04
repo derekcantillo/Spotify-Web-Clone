@@ -9,7 +9,6 @@ export const SideBar = () => {
    const location = useLocation()
    const {pathname} = location
 
-   console.log(pathname)
   return (
     <div className='_sidebar sidebar' >
         

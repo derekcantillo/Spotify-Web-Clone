@@ -7,11 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faShuffle, faVolumeLow} from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
+import { converTime } from '../../../helpers/convertTime';
+import { SlideAudio } from './SlideAudio';
 
 
 export const Footer = () => {
   const {isPlaying, audioActive }= useSelector((state: RootState) => state?.play)
-
+  const [timeValue, setTimeValue] = useState(0)
   const audioRef = useRef<HTMLAudioElement>(null)
 
 
@@ -36,8 +38,14 @@ export const Footer = () => {
           </div>
           <div className='_footer mid-footer'>
             <ControlPlayer audioRef={audioRef}/>
-            <RangeSlider/>
+            <div className='_footer range-slider'>
 
+              <SlideAudio audioRef={audioRef}/>
+              {/* <RangeSlider/> */}
+              {/* <small>{converTime(parsedTime)}</small> */}
+              
+              
+            </div>
             <audio
     
                 src={`${audioActive?.urls.high_mp3}`}

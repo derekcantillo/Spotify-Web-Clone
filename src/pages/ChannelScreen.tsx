@@ -21,11 +21,8 @@ const ChannelScreen = () => {
 
     
 
-    if (!isLoading) {
 
-      const {channel} = detail;
-      const {category, title, description, urls}=channel
-      const {logo_image} = urls
+
       return (
         
         
@@ -33,17 +30,17 @@ const ChannelScreen = () => {
 
           <div className='_channel channel-header'>
             <div className='_channel channel-img-header'>
-              <img src={logo_image.original}/>
+              <img src={ detail?.channel.urls.logo_image.original}/>
 
             </div>
             <div className='_channel channel-text-header'>
               <h3>Podcast</h3>
-              <h1>{title}</h1>
+              <h1>{detail?.channel.title}</h1>
               <div className='_channel channel-name-channel'>
                 <figure>
-                  <img src={logo_image.original}/>
+                  <img src={detail?.channel.urls.logo_image.original}/>
                 </figure>
-                <p>{title}</p>
+                <p>{detail?.channel.title}</p>
               </div>
             </div>
 
@@ -63,14 +60,13 @@ const ChannelScreen = () => {
             </div>
             <div className='_channel channel-description'>
                 <h2>Description</h2>
-                <p>{description}</p>
+                <p>{detail?.channel.description}</p>
             </div>
     
           </div>
          
         </div>
       )
-    }
   
 }
 

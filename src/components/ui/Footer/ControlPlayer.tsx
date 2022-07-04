@@ -28,12 +28,12 @@ export const ControlPlayer = ({audioRef} : ControlProps) => {
         }
     }
   return (
-    <div>
+    <div className='_footer control-player'>
         <button className='_buttons btn-play'>
-            <FontAwesomeIcon icon={faRotateBackward} color='gray' size='2x'/>
+            <FontAwesomeIcon icon={faRotateBackward} color='gray' size='lg'/>
         </button>
         <button className='_buttons btn-play'>
-            <FontAwesomeIcon icon={faBackwardStep} color='gray' size='2x'/>
+            <FontAwesomeIcon icon={faBackwardStep} color='gray' size='lg'/>
         </button>
         {
             isPlaying ? 
@@ -42,16 +42,16 @@ export const ControlPlayer = ({audioRef} : ControlProps) => {
             </button>
             :
             <button className='_buttons btn-play' onClick={()=>handlePLay()}>
-                <FontAwesomeIcon icon={faCirclePlay} color='white' size='3x'/>
+                <FontAwesomeIcon icon={faCirclePlay} color='white' size='2x'/>
             </button>
 
         }
         
         <button className='_buttons btn-play'>
-            <FontAwesomeIcon icon={faForwardStep} color='gray' size='2x'/>
+            <FontAwesomeIcon icon={faForwardStep} color='gray' size='lg'/>
         </button>
         <button className='_buttons btn-play'>
-            <FontAwesomeIcon icon={faRotateForward} color='gray' size='2x'/>
+            <FontAwesomeIcon icon={faRotateForward} color='gray' size='lg'/>
         </button>
     
     </div>

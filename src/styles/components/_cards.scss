@@ -175,18 +175,45 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 0px 16px;
-    color: #fff;
+    color: $green-primary;
+
+    
 }
-.card-ep-title h2{
+.card-ep-title h3{
     font-size: 1rem;
-    color: white;
     object-fit: cover;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;  
     overflow: hidden;
 
+
+
 }
+.ep-title{
+    color: white;
+
+    &.active{
+
+        color: $green-primary;
+    }
+}
+
+.card-ep-title .active h3{
+    font-size: 1rem;
+    color: $green-primary;
+    object-fit: cover;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+
+    &.active{
+        color: $green-primary;
+    }
+
+}
+
 .card-ep-description{
     display: flex;
     align-items: flex-start;

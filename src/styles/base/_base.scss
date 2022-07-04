@@ -46,6 +46,25 @@ main {
   ::-webkit-scrollbar-thumb:active {
     background: hsla(0,0%,100%,.5);
   }
+::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    background: $green-primary;
+    border: 1px solid $green-primary;
+    cursor: pointer;
+  }
+::-moz-range-thumb{
+    -webkit-appearance: none;
+    width: 100px;
+    height: 20px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    border: 1px solid $green-primary;
+    cursor: pointer;
+  }
 .main-content{
     min-height: 100vh;
     width: 100%;
@@ -73,20 +92,3 @@ h3{
     width: 100%; 
 }
 
-.loader-element {
-  background: white;
-  border-radius: 2rem;
-height: 10px;
-  margin-top: 5px;
-width: 30%;
-}
-
-.loader-element:before {
-  background-color: gray;
-  border-radius: 2rem;
-content: '';
-display: block;
-height: 10px;
-width: 0;
-  animation: getWidth .3s ease-in;
-}

@@ -1,11 +1,11 @@
 import React from 'react'
-import { GridLoader } from 'react-spinners';
+import { ScaleLoader } from 'react-spinners';
 
 export const Loader = () => {
   return (
     <div className="loader">
-        <h1>Cargando...</h1>
-        <div className="loader-element"></div>
+        <h1>Loading...</h1>
+        <ScaleLoader color='#1db954'/>
     </div>
   )
 }

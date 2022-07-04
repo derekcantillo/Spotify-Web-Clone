@@ -2,15 +2,17 @@
 import { AudioClip } from '../../interfaces/audioInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCirclePlay} from '@fortawesome/free-solid-svg-icons'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setAudioActive, setPlayState } from '../../actions/player';
 import { converTime } from '../../helpers/convertTime';
+import { RootState } from '../../store/store';
 
 interface Props{
   audio: AudioClip;
 }
 
 export const CardAudioItem = ({audio}:Props) => {
+  const {audioActive }= useSelector((state: RootState) => state?.play)
   const dispatch = useDispatch()
 
 
@@ -22,8 +24,8 @@ export const CardAudioItem = ({audio}:Props) => {
                 
             </div>
             <div className='_cards card-ep-details'>
-              <div className='_cards card-ep-title'>
-                  <h2>{audio.title}</h2>
+              <div className='_cards card-ep-title '>
+                  <h3 className={audioActive?.title === audio.title ? '_cards ep-title active' : '_cards ep-title'}>{audio.title}</h3>
 
               </div>
               <div className='_cards card-ep-description'>

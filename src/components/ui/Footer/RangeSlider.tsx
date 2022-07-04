@@ -1,23 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Range } from 'react-range';
+import { useSelector } from 'react-redux';
+import { converTime } from '../../../helpers/convertTime';
+import { RootState } from '../../../store/store';
 
 const STEP = 0.1;
 const MIN = 0;
-const MAX = 100;
+const MAX = 50;
 interface Value{
   value: number[]
 }
 export const RangeSlider = () => {
+  const {isPlaying, audioActive }= useSelector((state: RootState) => state?.play)
+  const [timeValue, setTimeValue] = useState(0)
 
-    const [value, setvalue] = useState<Value>({value: [50]})
+  const ref = useRef<NodeJS.Timeout>();
+
+
+      useEffect(() => {
+
+        ref.current && clearInterval(ref.current);
+        ref.current = audioActive && setInterval(()=>setTimeValue(s=>s+1), audioActive?.duration )
+      }, [audioActive?.duration])  
+
+
+    const parsedTime = audioActive?.duration;
+
+    const [value, setvalue] = useState<Value>({value: [0]})
+
+    
   return (
     <>
+    <small>{converTime(timeValue)}</small>
     <Range
           values={value.value}
           step={STEP}
           min={MIN}
-          max={MAX}
-          onChange={(values) => value.value}
+          max={audioActive ? parsedTime : MAX}
+          onChange={()=>setvalue(value)}
           renderTrack={({ props, children }) => (
             <div
               onMouseDown={props.onMouseDown}
@@ -57,7 +77,9 @@ export const RangeSlider = () => {
               }}
             >
              
+
             </div>
+
           )}
         />
     </>
