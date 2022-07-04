@@ -1,8 +1,8 @@
 import React from 'react'
-import { Channel } from '../../../interfaces/channellFullInterface';
+import { Channel } from '../../../interfaces/channelInterface'
 
 interface Props{
-    channel: Channel;
+    channel: Channel ;
   }
 
 export const CardHorizontalItem = ({channel} : Props) => {

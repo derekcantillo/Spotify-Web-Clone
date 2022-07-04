@@ -70,6 +70,7 @@ const SearchScreen = () => {
             
             
                     {
+                      channels &&
                       channels?.channels.length > 0 ?
                       
                       
@@ -98,7 +99,8 @@ const SearchScreen = () => {
                 <h1>Episodes</h1>
               </div>
             {
-              audios?.audio_clips.length > 0 ?
+
+              audios && audios?.audio_clips.length > 0 ?
 
               <div className='_home results-content'>
             
