@@ -10,7 +10,7 @@ import { CardHorizontalItem } from '../components/CardHorizontalItem';
 
 
 
-export const HomeScreen = () => {
+const HomeScreen = () => {
   
   const navigate = useNavigate()
   const {channelsRecommended}=useChannels()
@@ -65,3 +65,5 @@ export const HomeScreen = () => {
     </div>
   )
 }
+
+export default HomeScreen;

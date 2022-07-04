@@ -9,7 +9,7 @@ import { RootState } from '../store/store';
 type idParams={
     channelId: string;
 }
-export const ChannelScreen = () => {
+const ChannelScreen = () => {
     const params = useParams<idParams>()
     const {loading}=useSelector((state : RootState) => state.ui)
   
@@ -73,3 +73,5 @@ export const ChannelScreen = () => {
     }
   
 }
+
+export default ChannelScreen;

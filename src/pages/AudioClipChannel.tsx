@@ -1,7 +1,8 @@
 import React from 'react'
 
-export const AudioClipChannel = () => {
+const AudioClipChannel = () => {
   return (
     <div>AudioClipChannel</div>
   )
 }
+export default AudioClipChannel

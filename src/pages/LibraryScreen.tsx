@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavBar } from '../components/ui/NavBar'
 
-export const LibraryScreen = () => {
+const LibraryScreen = () => {
   return (
     <div className='_home home-content'> 
         <NavBar/>
@@ -15,3 +15,5 @@ export const LibraryScreen = () => {
     </div>
   )
 }
+
+export default LibraryScreen

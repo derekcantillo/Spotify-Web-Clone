@@ -9,7 +9,7 @@ import { useSearch } from '../hooks/useSearch';
 import { CardAudioItem } from '../components/ui/CardAudioItem'
 import queryString from 'query-string'
 
-export const SearchScreen = () => {
+const SearchScreen = () => {
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -118,3 +118,5 @@ export const SearchScreen = () => {
     </div>
   )
 }
+
+export default SearchScreen;
