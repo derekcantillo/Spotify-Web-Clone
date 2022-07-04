@@ -1,23 +1,17 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
-import { useAudioClips } from '../../hooks/useAudioClips';
-import { AudioClip, Audios } from '../../interfaces/audioInterface';
+
+import { AudioClip } from '../../interfaces/audioInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCirclePlay} from '@fortawesome/free-solid-svg-icons'
 import { useDispatch } from 'react-redux';
 import { setAudioActive, setPlayState } from '../../actions/player';
 import { converTime } from '../../helpers/convertTime';
+
 interface Props{
   audio: AudioClip;
 }
+
 export const CardAudioItem = ({audio}:Props) => {
   const dispatch = useDispatch()
-  // const handleAudio =()=>{
-  //   dispatch(setAudioActive(audio))
-  //   dispatch(setPlayState(true))
-  // }
-
-  
 
 
   return (
@@ -37,12 +31,14 @@ export const CardAudioItem = ({audio}:Props) => {
               </div>
 
               <div className='_cards card-ep-control'>
-                <div className='_cards card-ep-play'>
+                <div className='_cards card-ep-play' >
+                  <button onClick={()=>dispatch(setAudioActive(audio)) && dispatch(setPlayState(true))} >
+
                   <FontAwesomeIcon icon={faCirclePlay} color='white' size='2x'/>
+                  </button>
 
                 </div>
                 <div className='_cards card-ep-time'>
-                 
                   <p>Duration: {converTime(audio.duration)}</p>
                 </div>
               </div>

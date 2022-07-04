@@ -7,5 +7,10 @@ export const types = {
         isPlaying: '[PLAY] PlayingAudio',
         audioActive: '[PLAY] AudioActive'
 
+    },
+
+    searcher:{
+        searchText: '[SEARCH] SearchText'
+        
     }
 }

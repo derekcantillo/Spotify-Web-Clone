@@ -2,17 +2,33 @@
     background-color: transparent;
     color: rgb(126, 126, 126);
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 800;
     border: none;
     display: flex;
     align-items: center;
 
     &.active{
         color: white;
+        border-radius: 3px;
     }
 }
 
+.sidebar-a{
+    background-color: rgba(128, 128, 128, 0.368);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+
+
+}
 .play-icon{
     position: absolute;
     top: 45%;

@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { uiReducer } from '../reducers/uiReducer';
 import { playReducer } from '../reducers/playReducer';
 import thunk from "redux-thunk";
+import { searcherReducer } from '../reducers/searcherReducer';
 
 declare global {
     interface Window {
@@ -16,7 +17,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducers = combineReducers({
     ui: uiReducer,
-    play:playReducer
+    play:playReducer,
+    searcher: searcherReducer,
 })
 
 export const store = createStore(

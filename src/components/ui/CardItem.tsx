@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
-import edn from '../../assets/edn.jpg'
+
+import { AudioClip } from '../../interfaces/audioInterface';
 import { Channel } from '../../interfaces/channelInterface'
+import { ChannelF } from '../../interfaces/channelsFinders';
 
 
 interface Props{
-  channel: Channel;
+  channel?: Channel | ChannelF;
+  audio?: AudioClip
 }
-export const CardItem = ({channel} : Props) => {
+export const CardItem = ({channel, audio} : Props) => {
   
   return (
     
@@ -14,12 +16,12 @@ export const CardItem = ({channel} : Props) => {
     
         <div className='_cards img-holder'>
 
-          <img src={`${channel.urls.logo_image.original}`}  className='_cards img'/>
+          <img src={`${channel ?channel.urls.logo_image.original : audio?.urls.image}`}  className='_cards img'/>
         </div>
 
         <div className='_cards card-text'>
-          <h2 className='_cards card-title'>{channel.title}</h2>
-          <p>{channel.description}</p>
+          <h2 className='_cards card-title'>{channel ? channel.title : audio?.title}</h2>
+          <p>{channel ? channel.description : audio?.description}</p>
        
       </div>
       <div className='_cards play-icon'>

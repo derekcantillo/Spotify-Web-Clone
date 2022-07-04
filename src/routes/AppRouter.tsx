@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Footer } from '../components/ui/Footer/Footer';
 import { SideBar } from '../components/ui/SideBar';
+import { AudioClipChannel } from '../pages/AudioClipChannel';
 import { ChannelScreen } from '../pages/ChannelScreen';
 import { HomeScreen } from '../pages/HomeScreen'
 import { LibraryScreen } from '../pages/LibraryScreen';
@@ -17,6 +18,7 @@ export const AppRouter = () => {
             <Route path='/library' element={<LibraryScreen/>}/>
             <Route path='/search' element={<SearchScreen/>}/>
             <Route path='/channel/:channelId' element={<ChannelScreen/>}/>
+            <Route path='/episode/:episodeId' element={<AudioClipChannel/>}/>
             <Route path='/*' element={<HomeScreen/>}/>
         </Routes>
 

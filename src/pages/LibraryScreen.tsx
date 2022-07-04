@@ -1,7 +1,17 @@
 import React from 'react'
+import { NavBar } from '../components/ui/NavBar'
 
 export const LibraryScreen = () => {
   return (
-    <div>LibraryScreen</div>
+    <div className='_home home-content'> 
+        <NavBar/>
+        <div className='_home home-sections'>
+            <div className='_home section-title'>
+              <h1>Library Screen</h1>
+            </div>
+          
+
+        </div>
+    </div>
   )
 }
