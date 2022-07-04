@@ -1,11 +1,11 @@
 
-import { AudioClip } from '../../interfaces/audioInterface';
+import { AudioClip } from '../../../interfaces/audioInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCirclePlay} from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux';
-import { setAudioActive, setPlayState } from '../../actions/player';
-import { converTime } from '../../helpers/convertTime';
-import { RootState } from '../../store/store';
+import { setAudioActive, setPlayState } from '../../../actions/player';
+import { converTime } from '../../../helpers/convertTime';
+import { RootState } from '../../../store/store';
 
 interface Props{
   audio: AudioClip;

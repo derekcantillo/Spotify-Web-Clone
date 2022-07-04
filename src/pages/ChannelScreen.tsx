@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { CardAudioItem } from '../components/ui/CardAudioItem';
+import { CardAudioItem } from '../components/ui/Cards/CardAudioItem';
 import { useChannelDetails } from '../hooks/useChannelDetails'
 import { useAudioClips } from '../hooks/useAudioClips';
 import { useSelector } from 'react-redux';

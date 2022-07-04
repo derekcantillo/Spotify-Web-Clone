@@ -1,7 +1,7 @@
 
-import { AudioClip } from '../../interfaces/audioInterface';
-import { Channel } from '../../interfaces/channelInterface'
-import { ChannelF } from '../../interfaces/channelsFinders';
+import { AudioClip } from '../../../interfaces/audioInterface';
+import { Channel } from '../../../interfaces/channelInterface'
+import { ChannelF } from '../../../interfaces/channelsFinders';
 
 
 interface Props{

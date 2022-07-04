@@ -1,14 +1,14 @@
 
 import { useSelector } from 'react-redux'
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
-import { CardItem } from '../components/ui/CardItem';
-import { NavBar } from '../components/ui/NavBar'
+import { CardItem } from '../components/ui/Cards/CardItem';
+import { NavBar } from '../components/ui/Navbar/NavBar'
 import { useChannels } from '../hooks/useChannels'
 import { RootState } from '../store/store'
 import { useSearch } from '../hooks/useSearch';
-import { CardAudioItem } from '../components/ui/CardAudioItem'
+import { CardAudioItem } from '../components/ui/Cards/CardAudioItem'
 import queryString from 'query-string'
-import { Loader } from '../components/Loader';
+import { Loader } from '../components/loader/Loader';
 import { ScaleLoader } from 'react-spinners';
 
 const SearchScreen = () => {

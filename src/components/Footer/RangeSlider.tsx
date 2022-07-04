@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Range } from 'react-range';
 import { useSelector } from 'react-redux';
-import { converTime } from '../../../helpers/convertTime';
-import { RootState } from '../../../store/store';
+import { converTime } from '../../helpers/convertTime';
+import { RootState } from '../../store/store';
 
 const STEP = 0.1;
 const MIN = 0;

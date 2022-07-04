@@ -6,8 +6,8 @@ import { ControlPlayer } from './ControlPlayer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faShuffle, faVolumeLow} from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
-import { converTime } from '../../../helpers/convertTime';
+import { RootState } from '../../store/store';
+import { converTime } from '../../helpers/convertTime';
 import { SlideAudio } from './SlideAudio';
 
 

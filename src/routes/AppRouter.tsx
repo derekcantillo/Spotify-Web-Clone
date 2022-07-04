@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Loader } from '../components/Loader';
-import { Footer } from '../components/ui/Footer/Footer';
+import { Loader } from '../components/loader/Loader';
+import { Footer } from '../components/Footer/Footer';
 import { SideBar } from '../components/ui/SideBar';
 
 const Home = lazy(()=> import('../pages/HomeScreen') );

@@ -1,12 +1,12 @@
 
 import { useNavigate } from 'react-router-dom'
-import { CardItem } from '../components/ui/CardItem'
-import { NavBar } from '../components/ui/NavBar'
+import { CardItem } from '../components/ui/Cards/CardItem'
+import { NavBar } from '../components/ui/Navbar/NavBar'
 
 import { useChannels } from '../hooks/useChannels'
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
-import { CardHorizontalItem } from '../components/CardHorizontalItem';
+import { CardHorizontalItem } from '../components/ui/Cards/CardHorizontalItem';
 
 
 

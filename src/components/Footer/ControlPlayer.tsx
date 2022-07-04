@@ -4,8 +4,8 @@ import {faCirclePlay, faForwardStep,
         faBackwardStep, faCirclePause, 
         faRotateForward, faRotateBackward} from '@fortawesome/free-solid-svg-icons'
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store/store';
-import { setPlayState } from '../../../actions/player';
+import { RootState } from '../../store/store';
+import { setPlayState } from '../../actions/player';
 import { useRef } from 'react';
 
 type ControlProps={

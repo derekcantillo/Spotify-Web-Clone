@@ -1,8 +1,8 @@
 
 import { ChangeEvent, RefObject, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store/store';
-import { converTime } from '../../../helpers/convertTime';
+import { RootState } from '../../store/store';
+import { converTime } from '../../helpers/convertTime';
 
 
 

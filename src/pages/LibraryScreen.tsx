@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavBar } from '../components/ui/NavBar'
+import { NavBar } from '../components/ui/Navbar/NavBar'
 
 const LibraryScreen = () => {
   return (

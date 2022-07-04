@@ -1,5 +1,5 @@
 import React from 'react'
-import { Channel } from '../interfaces/channellFullInterface';
+import { Channel } from '../../../interfaces/channellFullInterface';
 
 interface Props{
     channel: Channel;
