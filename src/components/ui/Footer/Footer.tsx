@@ -13,9 +13,15 @@ import { SlideAudio } from './SlideAudio';
 
 export const Footer = () => {
   const {isPlaying, audioActive }= useSelector((state: RootState) => state?.play)
-  const [timeValue, setTimeValue] = useState(0)
-  const audioRef = useRef<HTMLAudioElement>(null)
 
+  const audioRef = useRef<HTMLAudioElement>(null)
+  
+  const time= audioRef.current?.currentTime;
+  
+  useEffect(() => {
+    console.log(time)
+  }, [])
+ 
 
   return (
     <footer className='_footer footer'>
@@ -40,11 +46,8 @@ export const Footer = () => {
             <ControlPlayer audioRef={audioRef}/>
             <div className='_footer range-slider'>
 
-              <SlideAudio audioRef={audioRef}/>
-              {/* <RangeSlider/> */}
-              {/* <small>{converTime(parsedTime)}</small> */}
-              
-              
+              <SlideAudio audioRef={audioRef}/>             
+          
             </div>
             <audio
     

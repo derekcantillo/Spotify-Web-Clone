@@ -8,6 +8,8 @@ import { RootState } from '../store/store'
 import { useSearch } from '../hooks/useSearch';
 import { CardAudioItem } from '../components/ui/CardAudioItem'
 import queryString from 'query-string'
+import { Loader } from '../components/Loader';
+import { ScaleLoader } from 'react-spinners';
 
 const SearchScreen = () => {
 
@@ -15,8 +17,12 @@ const SearchScreen = () => {
   const location = useLocation()
   const {channelsRecommended}=useChannels()
   const {loading}=useSelector((state : RootState) => state.ui)
-  const handleNavigate =(channelId : number)=>{
+
+  const handleChannelNavigate =(channelId : number)=>{
     navigate(`/channel/${channelId}`)
+  }
+  const handleEpisodeNavigate =(episodelId : number)=>{
+    navigate(`/episode/${episodelId}`)
   }
   const {q = ''} = queryString.parse(location.search)
  
@@ -46,6 +52,8 @@ const SearchScreen = () => {
                             <CardItem channel={item}/>
                           </div>
                         ))
+                      
+         
                     }
       
               </div>
@@ -60,28 +68,32 @@ const SearchScreen = () => {
             <div className='_home section-title'>
                 <h1>Channels</h1>
             </div>
+            <div className='_home recommended-channels-content'>
+            
             
                     {
                       channels?.channels.length > 0 ?
-
                       
-
-                        channels?.channels.map((item) =>(
-
-                          <div className='_home recommended-channels-content'>
-
-                          <div key={item.id} onClick={()=>handleNavigate(item.id)}>
+                      
+                      
+                      channels?.channels.map((item) =>(
+                        
+                        
+                        
+                        <div key={item.id} 
+                        onClick={()=>handleChannelNavigate(item.id)}>
                             <CardItem channel={item}/>
                           </div>
-                          </div>
-                        ))
-                       
+                      
+                      ))
+                      
                       : 
                       <div className='_home section-title'>
                           <h2>No channels found...</h2>
                       </div>
                     }
       
+                    </div>
               
 
             <div className='_home section-title'>
@@ -96,7 +108,7 @@ const SearchScreen = () => {
                       query != '' &&
                         
                         audios?.audio_clips.map((item) =>(
-                          <div key={item.id} onClick={()=>handleNavigate(item.id)}>
+                          <div key={item.id} onClick={()=>handleEpisodeNavigate(item.id)}>
                             <CardItem audio={item}/>
                           </div>
                         ))
