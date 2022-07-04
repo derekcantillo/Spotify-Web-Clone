@@ -37,7 +37,7 @@ const SearchScreen = () => {
 
           <section>
               <div className='_home section-title'>
-                <h1>Explore all</h1>
+                <h1>Description</h1>
               </div>
 
               <div className='_home recommended-content'>

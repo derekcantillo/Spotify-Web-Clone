@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setAudioActive, setPlayState } from '../../../actions/player';
 import { converTime } from '../../../helpers/convertTime';
 import { RootState } from '../../../store/store';
+import { useNavigate } from 'react-router-dom';
 
 interface Props{
   audio: AudioClip;
@@ -14,7 +15,10 @@ interface Props{
 export const CardAudioItem = ({audio}:Props) => {
   const {audioActive }= useSelector((state: RootState) => state?.play)
   const dispatch = useDispatch()
-
+  const navigate = useNavigate()
+  const handleEpisodeNavigate =(episodelId : number)=>{
+    navigate(`/episode/${episodelId}`)
+  }
 
   return (
     <div className='_cards card-ep-container animate__animated animate__fadeIn'>
@@ -28,7 +32,7 @@ export const CardAudioItem = ({audio}:Props) => {
                   <h3 className={audioActive?.title === audio.title ? '_cards ep-title active' : '_cards ep-title'}>{audio.title}</h3>
 
               </div>
-              <div className='_cards card-ep-description'>
+              <div className='_cards card-ep-description' onClick={()=>handleEpisodeNavigate(audio.id)}>
                 <p>{audio.description}</p>
               </div>
 
@@ -36,7 +40,8 @@ export const CardAudioItem = ({audio}:Props) => {
                 <div className='_cards card-ep-play' >
                   <button onClick={()=>dispatch(setAudioActive(audio)) && dispatch(setPlayState(true))} >
 
-                  <FontAwesomeIcon icon={faCirclePlay} color='white' size='2x'/>
+                  <FontAwesomeIcon icon={faCirclePlay} color='white' size='3x'/>
+                    
                   </button>
 
                 </div>

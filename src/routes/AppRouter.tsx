@@ -8,6 +8,7 @@ const Home = lazy(()=> import('../pages/HomeScreen') );
 const Channel = lazy(()=> import('../pages/ChannelScreen') );
 const Library= lazy(()=> import('../pages/LibraryScreen') );
 const Search = lazy(()=> import('../pages/SearchScreen') );
+const Episode = lazy(()=>import('../pages/AudioClipScreen'));
 
 
 export const AppRouter = () => {
@@ -15,13 +16,14 @@ export const AppRouter = () => {
     <Suspense fallback={<Loader/>}>
       <div className='main-content'>
           <SideBar/>
+          
           <main>
           <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/library' element={<Library/>}/>
               <Route path='/search' element={<Search/>}/>
               <Route path='/channel/:channelId' element={<Channel/>}/>
-              {/* <Route path='/episode/:episodeId' element={<AudioClipChannel/>}/> */}
+              <Route path='/episode/:episodeId' element={<Episode/>}/>
               <Route path='/*' element={<Home/>}/>
           </Routes>
 

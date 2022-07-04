@@ -1,25 +1,25 @@
 
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom';
 import { CardAudioItem } from '../components/ui/Cards/CardAudioItem';
 import { useChannelDetails } from '../hooks/useChannelDetails'
 import { useAudioClips } from '../hooks/useAudioClips';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { NavBar } from '../components/ui/Navbar/NavBar';
+
 
 type idParams={
     channelId: string;
 }
 const ChannelScreen = () => {
     const params = useParams<idParams>()
-    const {loading}=useSelector((state : RootState) => state.ui)
-  
+
+    const navigate = useNavigate()
     const {channelId} = params;
     const parsed = parseInt(channelId as string)
   
     const{detail, isLoading}=useChannelDetails(parsed)
     const{audios}=useAudioClips(parsed)
 
-    
+
 
 
 
@@ -27,7 +27,7 @@ const ChannelScreen = () => {
         
         
         <div className='_channel channel-content'>
-
+          <NavBar/>
           <div className='_channel channel-header'>
             <div className='_channel channel-img-header'>
               <img src={ detail?.channel.urls.logo_image.original}/>
@@ -53,8 +53,9 @@ const ChannelScreen = () => {
               !isLoading &&
   
               audios?.audio_clips.map((audi)=>(
-  
-                <CardAudioItem audio={audi} />
+
+                  <CardAudioItem audio={audi} />
+             
               ))
             }
             </div>
