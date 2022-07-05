@@ -18,7 +18,9 @@ export const ChannelScreen = () => {
     
     <div className='_channel channel-content'>
         
+            <div className='_channel pintar-rojo'>
 
+            </div>
             <img src={`${state?.channel.urls.banner_image.original}`}/>
 
             <div>
