@@ -1,46 +1,72 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+
+import { useParams, useNavigate } from 'react-router-dom';
+import { CardAudioItem } from '../components/ui/Cards/CardAudioItem';
 import { useChannelDetails } from '../hooks/useChannelDetails'
+import { useAudioClips } from '../hooks/useAudioClips';
+import { NavBar } from '../components/ui/Navbar/NavBar';
+
+
 type idParams={
     channelId: string;
 }
-export const ChannelScreen = () => {
+const ChannelScreen = () => {
     const params = useParams<idParams>()
 
     const {channelId} = params;
     const parsed = parseInt(channelId as string)
+  
+    const{detail, isLoading}=useChannelDetails(parsed)
+    const{audios}=useAudioClips(parsed)
 
-    const{state, isLoading}=useChannelDetails(parsed)
-    console.log(state);
-   
-    
-  return (
-    
-    <div className='_channel channel-content'>
+
+
+
+      return (
         
-            <div className='_channel pintar-rojo'>
+        
+        <div className='_channel channel-content'>
+          <NavBar/>
+          <div className='_channel channel-header'>
+            <div className='_channel channel-img-header'>
+              <img src={ detail?.channel.urls.logo_image.original}/>
 
             </div>
-            <img src={`${state?.channel.urls.banner_image.original}`}/>
-
-            <div>
-                
-                    <div className='_buttons play-icon'>
-                        <div className='_buttons circle'>
-                        <div className='_buttons triangle'>
-
-                        </div> 
-
-                        </div>
-
-                    </div>
-
-            
-
+            <div className='_channel channel-text-header'>
+              <h3>Podcast</h3>
+              <h1>{detail?.channel.title}</h1>
+              <div className='_channel channel-name-channel'>
+                <figure>
+                  <img src={detail?.channel.urls.logo_image.original}/>
+                </figure>
+                <p>{detail?.channel.title}</p>
+              </div>
             </div>
-       
 
-     
-    </div>
-  )
+          </div>
+          <div className='_channel channel-body'>
+           
+            <div className='_channel channel-eps'>
+              <h2>All Episodes</h2>
+            {
+              !isLoading &&
+  
+              audios?.audio_clips.map((audi)=>(
+
+                  <CardAudioItem audio={audi} />
+             
+              ))
+            }
+            </div>
+            <div className='_channel channel-description'>
+                <h2>Description</h2>
+                <p>{detail?.channel.description}</p>
+            </div>
+    
+          </div>
+         
+        </div>
+      )
+  
 }
+
+export default ChannelScreen;

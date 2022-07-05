@@ -1,25 +1,36 @@
-import React from 'react'
+import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { Loader } from '../components/loader/Loader';
+import { Footer } from '../components/Footer/Footer';
 import { SideBar } from '../components/ui/SideBar';
-import { ChannelScreen } from '../pages/ChannelScreen';
-import { HomeScreen } from '../pages/HomeScreen'
-import { LibraryScreen } from '../pages/LibraryScreen';
-import { SearchScreen } from '../pages/SearchScreen';
+
+const Home = lazy(()=> import('../pages/HomeScreen') );
+const Channel = lazy(()=> import('../pages/ChannelScreen') );
+const Library= lazy(()=> import('../pages/LibraryScreen') );
+const Search = lazy(()=> import('../pages/SearchScreen') );
+const Episode = lazy(()=>import('../pages/AudioClipScreen'));
+
 
 export const AppRouter = () => {
   return (
-    <div className='main-content'>
-        <SideBar/>
-        <main>
-        <Routes>
-            <Route path='/' element={<HomeScreen/>}/>
-            <Route path='/library' element={<LibraryScreen/>}/>
-            <Route path='/search' element={<SearchScreen/>}/>
-            <Route path='/channel/:channelId' element={<ChannelScreen/>}/>
-            <Route path='/*' element={<HomeScreen/>}/>
-        </Routes>
+    <Suspense fallback={<Loader/>}>
+      <div className='main-content'>
+          <SideBar/>
+          
+          <main>
+          <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/library' element={<Library/>}/>
+              <Route path='/search' element={<Search/>}/>
+              <Route path='/channel/:channelId' element={<Channel/>}/>
+              <Route path='/episode/:episodeId' element={<Episode/>}/>
+              <Route path='/*' element={<Home/>}/>
+          </Routes>
 
-        </main>
-    </div>
+          </main>
+          <Footer/>
+      </div>
+
+    </Suspense>
   )
 }

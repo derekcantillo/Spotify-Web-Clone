@@ -16,3 +16,132 @@
     width: 80vw;
     height: 50%;
 }
+.header-title{
+    color: white;
+}
+.header-subtitle{
+
+    color: white;
+}
+.logo-container{
+    width: 13rem;
+
+}
+.img{
+    object-fit: cover;
+}
+.header-description{
+    color: white;
+}
+.channel-header{
+    padding: 24px 32px 24px;
+    display: grid;
+    grid-template-columns: 232px 1fr;
+    column-gap: 24px;
+}
+.channel-img-header{
+    width: 232px;
+    height: 232px;
+}
+
+.channel-img-header img{
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+}
+
+.channel-text-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.channel-text-header h3{
+    margin: 0;
+    margin-top: 4px;
+    letter-spacing: -0.4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.channel-text-header h1{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    padding: 0.08em 0px;
+    font-size: 96px;
+    line-height: 96px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    text-transform: none;
+    color: white;
+}
+.channel-name-channel{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+.channel-name-channel figure{
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    display: inline-block;
+}
+
+.channel-name-channel figure img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.channel-name-channel p{
+    margin: 0;
+    margin-left: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+    color: white;
+}
+.channel-body{
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 24px;
+    padding: 24px 32px 24px;
+
+}
+.channel-description h2{
+    color: white;
+    margin-bottom: 20px;
+
+}
+.channel-description p{
+    color: gray;
+
+}
+.channel-description {
+    display: flex;
+    flex-direction: column;
+    
+}
+.channel-eps h2{
+    color: white;
+    margin-bottom: 20px;
+
+}
+.channel-details-body{
+    padding-left: 50px;
+}
+.play-container{
+    margin-bottom: 20px;
+
+}
+
+
