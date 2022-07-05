@@ -37,7 +37,7 @@ export const Footer = () => {
                   audioActive ? 
                   audioActive?.title
                   :
-                  'Select a podcast to play / Seleccione un poscast para reproducir'
+                  'Select a podcast to play / Seleccione un podcast para reproducir'
                 }
               </p>
               <p className='_footer card-footer-title'>

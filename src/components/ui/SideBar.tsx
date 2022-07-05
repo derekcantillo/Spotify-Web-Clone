@@ -12,7 +12,7 @@ export const SideBar = () => {
   return (
     <div className='_sidebar sidebar' >
         
-            <img src={logofy} className='_sidebar img-logo'/>
+            <img src={`https://res.cloudinary.com/dgx5mp5tw/image/upload/v1657025579/Spotify%20Clone/spotify-logo_owcvzw.png`} className='_sidebar img-logo'/>
 
         
         <ul className='_sidebar menu-items'>
