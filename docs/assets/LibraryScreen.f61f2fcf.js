@@ -1,0 +1,1 @@
+import{N as r}from"./NavBar.3b4fa6f9.js";import{a as s,j as e}from"./index.be61cf56.js";const o=()=>s("div",{className:"_home home-content",children:[e(r,{}),e("div",{className:"_home home-sections",children:e("div",{className:"_home section-title",children:e("h1",{children:"Library Screen"})})})]});export{o as default};
