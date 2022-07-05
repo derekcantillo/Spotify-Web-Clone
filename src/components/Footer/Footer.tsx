@@ -1,11 +1,11 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { ControlPlayer } from './ControlPlayer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faVolumeUp} from '@fortawesome/free-solid-svg-icons'
+
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { SlideAudio } from './SlideAudio';
+import { VolumeControl } from './VolumeControl';
 
 
 export const Footer = () => {
@@ -63,19 +63,10 @@ export const Footer = () => {
           </div>
 
           <div className='_footer right-footer'>
-            
-            <FontAwesomeIcon icon={faVolumeUp} color='gray'/>
-            <div className="range-volume">
-                  <div className="field-volume">
-                      
-                      <input 
-                        type="range" min="0" 
-                          max="100"
-                          value="100" 
-                          step="1"/>
-          
-                  </div>
-              </div>
+                <VolumeControl
+                audioRef={audioRef}
+                
+                />
           </div>
 
         </div>
